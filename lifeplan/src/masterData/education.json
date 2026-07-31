@@ -1,0 +1,126 @@
+{
+  "800万～999万": {
+    "公立": {
+      "小1": {
+        "tuition": 143500,
+        "outside": 194500
+      },
+      "小2": {
+        "tuition": 81000,
+        "outside": 187000
+      },
+      "小3": {
+        "tuition": 185000,
+        "outside": 101000
+      },
+      "小4": {
+        "tuition": 92000,
+        "outside": 213000
+      },
+      "小5": {
+        "tuition": 98000,
+        "outside": 239000
+      },
+      "小6": {
+        "tuition": 126000,
+        "outside": 240000
+      },
+      "中1": {
+        "tuition": 244000,
+        "outside": 218000
+      },
+      "中2": {
+        "tuition": 135000,
+        "outside": 249000
+      },
+      "中3": {
+        "tuition": 155000,
+        "outside": 400000
+      },
+      "高1": {
+        "tuition": 373000,
+        "outside": 136000
+      },
+      "高2": {
+        "tuition": 295000,
+        "outside": 167000
+      },
+      "高3": {
+        "tuition": 159000,
+        "outside": 192000
+      }
+    },
+    "私立": {
+      "小1": {
+        "tuition": 1277000,
+        "outside": 556000
+      },
+      "小2": {
+        "tuition": 782000,
+        "outside": 487000
+      },
+      "小3": {
+        "tuition": 820000,
+        "outside": 536000
+      },
+      "小4": {
+        "tuition": 842000,
+        "outside": 607000
+      },
+      "小5": {
+        "tuition": 868000,
+        "outside": 670000
+      },
+      "小6": {
+        "tuition": 895000,
+        "outside": 738000
+      },
+      "中1": {
+        "tuition": 1293000,
+        "outside": 261000
+      },
+      "中2": {
+        "tuition": 849000,
+        "outside": 287000
+      },
+      "中3": {
+        "tuition": 875000,
+        "outside": 352000
+      },
+      "高1": {
+        "tuition": 1040000,
+        "outside": 217000
+      },
+      "高2": {
+        "tuition": 688000,
+        "outside": 262000
+      },
+      "高3": {
+        "tuition": 524000,
+        "outside": 301000
+      }
+    },
+    "大学": {
+      "国立": {
+        "tuition": 643000,
+        "facilityFee": 0,
+        "entranceFee": 338000
+      },
+      "公立": {
+        "tuition": 644000,
+        "facilityFee": 0,
+        "entranceFee": 470000
+      },
+      "私立文": {
+        "tuition": 993000,
+        "facilityFee": 173000,
+        "entranceFee": 269000
+      },
+      "私立理": {
+        "tuition": 1395000,
+        "facilityFee": 160000,
+        "entranceFee": 282000
+      }
+    }
+  }
+}

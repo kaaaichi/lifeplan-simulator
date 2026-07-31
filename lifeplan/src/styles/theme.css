@@ -1,0 +1,29 @@
+/* lifeplan/src/styles/theme.css */
+:root {
+  --color-bg: #0b1f2a;
+  --color-surface: #12303f;
+  --color-surface-alt: #16394a;
+  --color-text: #eef4f7;
+  --color-muted: #9fb4bd;
+  --color-primary: #1f7a8c;
+  --color-accent: #5bbccb;
+  --color-positive: #4caf82;
+  --color-negative: #e2665b;
+  --color-band: #5bbccb;
+  /* 現金/投資の内訳チャート専用色（issue #5）。
+     バンド色(--color-band)・アクセント色とは独立に管理する。
+     暖色(現金) vs ティール(投資)の対比で色覚多様性でも判別可能
+     （dataviz validator: dark surface #12303f で全チェックPASS、CVD ΔE 73.9）。 */
+  --color-cash: #bd8628;
+  --color-investment: #2d9db4;
+  /* 実績(確定値)専用色。予測系(primary/accent/band/investment=ティール系)から
+     はっきり離れた暖色にして、実績/予測がひと目で区別できるようにする(§20)。 */
+  --color-actual: #ff9f1c;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+}

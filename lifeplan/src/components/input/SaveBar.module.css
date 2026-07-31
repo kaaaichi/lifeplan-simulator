@@ -1,0 +1,35 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  position: sticky;
+  bottom: 0;
+  background: var(--color-bg, #fff);
+  border-top: 1px solid var(--color-border, #cbd5e1);
+}
+.dirty {
+  font-size: 0.85rem;
+  color: var(--color-warning, #b7791f);
+}
+.error {
+  font-size: 0.85rem;
+  color: var(--color-negative, #c0392b);
+}
+.bar button {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border, #cbd5e1);
+  background: var(--color-accent, #0f766e);
+  color: #fff;
+  cursor: pointer;
+}
+.bar button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.bar button.secondary,
+.secondary {
+  background: transparent;
+  color: inherit;
+}

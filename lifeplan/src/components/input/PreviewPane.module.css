@@ -1,0 +1,19 @@
+.pane {
+  position: sticky;
+  top: 1rem;
+  align-self: flex-start;
+  min-width: 0;
+}
+.kpis {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0 0 0.75rem;
+}
+.kpis dt {
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #5a6b7b);
+}
+.kpis dd {
+  margin: 0;
+  font-weight: 700;
+}

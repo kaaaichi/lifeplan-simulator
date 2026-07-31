@@ -1,0 +1,33 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+.label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted, #5a6b7b);
+}
+.control {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.control input,
+.control select {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--color-border, #cbd5e1);
+  border-radius: 6px;
+  font: inherit;
+  width: 100%;
+  max-width: 16rem;
+}
+.suffix {
+  color: var(--color-text-muted, #5a6b7b);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.error {
+  color: var(--color-negative, #c0392b);
+  font-size: 0.8rem;
+}

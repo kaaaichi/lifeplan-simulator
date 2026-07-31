@@ -1,0 +1,87 @@
+/* lifeplan/src/components/dashboard/AnnualTable.module.css */
+.container {
+  background: var(--color-surface);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.scroll {
+  overflow-x: auto;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid var(--color-surface-alt);
+}
+
+.table td {
+  padding: 0.35rem 0.6rem;
+  border-bottom: 1px solid var(--color-surface-alt);
+}
+
+.table tbody tr:hover {
+  background: var(--color-surface-alt);
+}
+
+.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.negative {
+  color: var(--color-negative);
+}
+
+.events {
+  color: var(--color-accent);
+  white-space: normal;
+  min-width: 12rem;
+}
+
+.eventsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.eventsList li + li {
+  margin-top: 0.25rem;
+}
+
+.actualRow {
+  background: color-mix(in srgb, var(--color-actual) 18%, var(--color-surface));
+  box-shadow: inset 3px 0 0 var(--color-actual);
+}
+
+.actualBadge {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: var(--color-actual);
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 0.65rem;
+  vertical-align: middle;
+}

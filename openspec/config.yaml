@@ -1,0 +1,28 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+# Add your tech stack, conventions, style guides, domain knowledge, etc.
+# Example:
+#   context: |
+#     Tech stack: TypeScript, React, Node.js
+#     We use conventional commits
+#     Domain: e-commerce platform
+
+context: |
+  lifeplan は夫婦2人世帯のライフプラン・シミュレーション ダッシュボード（日々の家計簿ではない）。
+  Tech stack: TypeScript, React, Vite, Zustand, Firebase (Auth/Firestore), Vitest, Playwright。
+  作業ディレクトリは lifeplan/ パッケージ配下。エンジン層は src/engine/（純TypeScript、UI/Firebase非依存）。
+  受け入れ試験は新しい専用テストランナーを作らず、既存のVitest（ロジック・store層）/Playwright（画面）に
+  Scenario単位で実装し、it() 名またはコメントに「シナリオ: <name>（受け入れ試験）」と明記してspec.mdの
+  Scenarioとのトレーサビリティを確保する。
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours

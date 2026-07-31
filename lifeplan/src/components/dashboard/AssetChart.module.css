@@ -1,0 +1,55 @@
+/* lifeplan/src/components/dashboard/AssetChart.module.css */
+.container {
+  background: var(--color-surface);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.legend {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legendSwatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.tooltip {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-band);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  min-width: 9rem;
+}
+
+.tooltipYear {
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.tooltipRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0.15rem 0;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.tooltipRow strong {
+  color: var(--color-text);
+  font-weight: 600;
+}

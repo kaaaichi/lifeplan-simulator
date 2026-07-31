@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.firebase/
+*.log
+.DS_Store
+.worktrees/
+.superpowers/
+
+# 世帯の実データ。ローカルに置くと placeholderHousehold の代わりに読み込まれる
+lifeplan/src/persistence/seed.local.json
+
+# Firebase のサービスアカウント鍵
+lifeplan/scripts/service-account*.json

@@ -1,0 +1,54 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--color-bg);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 22rem;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  background: var(--color-surface);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+  text-align: center;
+}
+.logo {
+  font-size: 2rem;
+}
+.title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+.lead {
+  color: var(--color-muted);
+  margin: 0;
+  font-size: 0.9rem;
+}
+.googleButton {
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  border: 1px solid var(--color-muted);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.error {
+  color: var(--color-negative);
+  font-size: 0.85rem;
+  margin: 0;
+}
+.uid {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  word-break: break-all;
+  margin: 0;
+}

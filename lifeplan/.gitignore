@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-ssr/
+*.local
+src/persistence/seed.local.json
+scripts/service-account.local.json
+playwright-report/
+test-results/
+
+# firebase
+.firebase/
+*-debug.log

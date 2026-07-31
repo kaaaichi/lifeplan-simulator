@@ -1,0 +1,19 @@
+/* lifeplan/src/components/scenarios/ScenariosPage.module.css */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.error {
+  color: var(--color-negative);
+}

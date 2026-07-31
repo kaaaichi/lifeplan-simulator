@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 世帯を利用する人の UID ホワイトリスト（§5・§12.3③）。
+    // 自分の Firebase プロジェクトの UID に置き換えて `npm run deploy:rules` する。
+    // UID は Firebase Console の Authentication、またはログイン後の auth.currentUser.uid で確認できる。
+    //
+    // 注: UID をルールに直接書くのは「利用者が数人で固定」という前提の簡易実装。
+    // public なリポジトリにそのままコミットすると利用者アカウントの識別子が露出するため、
+    // 公開する場合はカスタムクレームや別コレクションでの管理を検討すること。
+    function isAllowedUser() {
+      return request.auth != null
+        && request.auth.uid in ['REPLACE_WITH_YOUR_UID_A', 'REPLACE_WITH_YOUR_UID_B'];
+    }
+    match /households/{householdId} {
+      allow read, write: if isAllowedUser();
+    }
+    // 上記以外はデフォルト拒否（match なし = deny）
+  }
+}
