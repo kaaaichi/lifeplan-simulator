@@ -50,7 +50,12 @@ const routes = [
 ]
 
 export function App() {
-  const router = useMemo(() => createBrowserRouter(routes), [])
+  // サブパス配信(GitHub Pages のプロジェクトページ等)に対応するため basename を渡す。
+  // import.meta.env.BASE_URL は vite の --base の値で、既定は '/'。
+  const router = useMemo(
+    () => createBrowserRouter(routes, { basename: import.meta.env.BASE_URL }),
+    [],
+  )
   return (
     <AuthGate>
       <RouterProvider router={router} />
