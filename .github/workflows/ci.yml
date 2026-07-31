@@ -123,24 +123,40 @@ jobs:
           name: web-dist
           path: lifeplan/dist
           if-no-files-found: error
-      # main への push 時のみ本番デプロイ（firebase モードでビルドし直す）
-      - name: Write .env.local (Firebase Web設定)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          cat > .env.local << 'LIFEPLAN_ENV_EOF'
-          ${{ secrets.FIREBASE_WEB_ENV }}
-          LIFEPLAN_ENV_EOF
-      - name: Build (firebase mode)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: npm run build:fb
-      - name: Write service account key
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          cat > /tmp/firebase-service-account.json << 'LIFEPLAN_SA_EOF'
-          ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          LIFEPLAN_SA_EOF
-      - name: Deploy to Firebase Hosting
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: /tmp/firebase-service-account.json
-        run: npx firebase deploy --only hosting --project YOUR_FIREBASE_PROJECT_ID --non-interactive
+
+  # main への push 時のみ、GitHub Pages にデモを公開する。
+  # デモは既定モード（VITE_PERSISTENCE 未設定 = memory）でビルドするため、
+  # Firebase にも認証にも接続しない。入力はブラウザのメモリ上にしか存在せず、
+  # リロードで消える（＝訪問者のデータがどこにも保存されない）。
+  pages:
+    needs: [lint, typecheck, unit, integration]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: lifeplan/package-lock.json
+      - run: npm ci
+      # プロジェクトページはサブパス配信のため base を指定する
+      - name: Build (demo for GitHub Pages)
+        run: npm run build -- --base=/lifeplan-simulator/
+      # createBrowserRouter を使っているため、/input への直接アクセスやリロードでは
+      # Pages が 404 を返す。index.html を 404.html として置き、ルーティングを SPA に委ねる。
+      - name: SPA fallback
+        run: cp dist/index.html dist/404.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: lifeplan/dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
