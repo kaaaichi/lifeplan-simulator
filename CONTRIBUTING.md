@@ -16,7 +16,17 @@
 - Lint: `npm run lint`（ESLint flat config）。型: `npm run typecheck`。
 - デリバリー: `deliver` ジョブが `npm run build` → `dist/` を `web-dist` artifact 化。
   - 既知の制約: `education.json` は `dist/` にコピーされない（resolveJsonModule の制約）。成果物が実消費される段階でバンドラ/コピー対応。
-  - 将来: Web アプリ着手時に `deliver` に Firebase Hosting デプロイを追加（`secrets.FIREBASE_TOKEN`）。
+- デモ公開: `pages` ジョブが `main` への push 時のみ GitHub Pages へデプロイする。
+  - サブパス配信のため `--base=/lifeplan-simulator/` を付けてビルドし、`index.html` を `404.html` にコピーして SPA フォールバックを用意している（`createBrowserRouter` には `import.meta.env.BASE_URL` を `basename` として渡す）。
+  - デモは既定モード（`VITE_PERSISTENCE` 未設定 = `memory`）でビルドするため、Firebase にも認証にも接続しない。
+
+## 依存関係の更新
+
+- 更新候補の確認: `npx npm-check-updates`（`-u` で `package.json` を書き換え）。
+- マイナー/パッチはまとめて上げてよい。**メジャーは1つずつ**上げて `typecheck` / `lint` / `test` / `build` / `test:e2e` を通すこと。
+- **TypeScript は 6 系に固定している（7 に上げないこと）**。`typescript-eslint` が TS 7.0 に未対応で、`npm run lint` が
+  `typescript-eslint does not support TS 7.0` で異常終了する。追跡: https://github.com/typescript-eslint/typescript-eslint/issues/10940
+  （TS 7 自体は `tsc --noEmit`・テスト・ビルドとも通るので、`typescript-eslint` が対応したら再挑戦する）
 
 ## main 保護
 - branch protection: PR 必須・直 push 禁止・必須チェック（`lint`/`typecheck`/`unit`/`integration`/`e2e`）・linear history。
