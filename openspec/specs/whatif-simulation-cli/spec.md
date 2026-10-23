@@ -1,7 +1,8 @@
 # whatif-simulation-cli Specification
 
 ## Purpose
-TBD - created by archiving change financial-events-whatif-cli. Update Purpose after archive.
+Firestore 上の世帯データのシナリオを複製し、`FinancialEvent` を追加して試算する what-if シミュレーションを、CLI（Claude Code のスラッシュコマンドから起動可能）で実行する。
+
 ## Requirements
 ### Requirement: what-if シミュレーションCLI
 `scripts/simulateCli.ts` は、Firebase Admin SDK経由で指定した `households/{householdId}` ドキュメントを読み込み、指定したシナリオ（`--scenario <scenarioId|active>`）を複製し、指定した `FinancialEvent[]`（一時JSONファイル経由、`--events <path>`）を複製シナリオの `inputs.financialEvents` に追加した上で `simulate()` を実行し、結果を年次テーブルとしてターミナルに出力しなければならない(SHALL)。

@@ -1,7 +1,8 @@
 # household-asset-benchmark Specification
 
 ## Purpose
-TBD - created by archiving change asset-percentile-comparison. Update Purpose after archive.
+現在の総資産を公的な家計資産統計（全国・世帯主の同年代）と比べ、パーセンタイル順位と推定偏差値でダッシュボードに示す。
+
 ## Requirements
 ### Requirement: 資産の全国・同年代比較の算出
 システムは、現在の総資産（現金+投資残高、`KpiSummary.currentTotalAssets`）を、静的に保持する家計資産統計（全国および世帯主の年代区分）と比較し、それぞれについてパーセンタイル順位と推定偏差値をSHALL算出する。偏差値は、統計の資産額レンジ別分布から補間したパーセンタイル順位を、標準正規分布の逆CDFで換算した値とする（平均・標準偏差ベースの算出方式は用いない）。

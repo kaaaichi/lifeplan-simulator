@@ -1,7 +1,8 @@
 # financial-events Specification
 
 ## Purpose
-TBD - created by archiving change financial-events-whatif-cli. Update Purpose after archive.
+育休による収入減や車購入・ローン・旅行などの期間限定の収入・支出（`FinancialEvent`）を定義し、年次キャッシュフローに反映する。
+
 ## Requirements
 ### Requirement: FinancialEvent データモデル
 `Inputs` は `financialEvents?: FinancialEvent[]` を持たなければならない(SHALL)。各 `FinancialEvent` は `id: string`、`label: string`、`kind: '収入' | '支出'`、`startYear: number`、`endYear: number | null`、`annualAmount: number` を持たなければならない(SHALL)。`financialEvents` が未指定の場合は空配列として扱わなければならない(SHALL)。

@@ -1,7 +1,8 @@
 # emergency-fund-drawdown Specification
 
 ## Purpose
-TBD - created by archiving change emergency-fund-drawdown. Update Purpose after archive.
+年末の現金残高が生活防衛資金（`emergencyFundCash`）を下回る年に、不足分を投資残高から取り崩して現金を確保する資金繰りを、年次シミュレーションに反映する。
+
 ## Requirements
 ### Requirement: 生活防衛資金の閾値定義
 `Assumptions`型は`emergencyFundCash: number`（現金として維持する最低額、円単位）を持たなければならない(SHALL)。デフォルト値は1,200,000円とする。

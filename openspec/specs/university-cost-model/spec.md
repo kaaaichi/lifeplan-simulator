@@ -1,7 +1,8 @@
 # university-cost-model Specification
 
 ## Purpose
-TBD - created by archiving change university-cost-buffer. Update Purpose after archive.
+大学費用を区分（国立・公立・私立文・私立理）ごとに授業料・施設設備費・入学時一時金でモデル化し、入学金を大学1年目に計上する。
+
 ## Requirements
 ### Requirement: 大学費用データモデル
 `education.json`の`大学`エントリは、区分（国立・公立・私立文・私立理）ごとに`tuition`（年間授業料）・`facilityFee`（年間施設設備費、国立・公立は0）・`entranceFee`（入学時一時金）の3フィールドを持たなければならない(SHALL)。
