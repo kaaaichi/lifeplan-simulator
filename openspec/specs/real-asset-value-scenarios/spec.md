@@ -1,7 +1,8 @@
 # real-asset-value-scenarios Specification
 
 ## Purpose
-TBD - created by archiving change real-asset-value-fx-scenarios. Update Purpose after archive.
+為替（USD/JPY）と S&P500 の CAPE レシオが歴史的水準へ戻った場合の投資残高の実質評価額を、3つのシナリオで計算してダッシュボードに示す。
+
 ## Requirements
 ### Requirement: 実質資産評価額の3シナリオ計算
 システムは、現在の投資残高（現金を除く）に対し、為替（USD/JPY）とS&P500 Shiller CAPEレシオの現在値と、3つの静的な反転シナリオ（A: 穏当な反転、B: 企業物価PPP水準、C: 消費者物価PPP水準）の目標値との比を用いて、実質資産評価額をSHALL計算する。計算式は `investmentBalance × (scenario.targetFx / currentFx) × (scenario.targetCape / currentCape)` とする。
